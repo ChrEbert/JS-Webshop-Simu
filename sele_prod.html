@@ -1,0 +1,180 @@
+<HTML>
+<HEAD>
+  <META charset="UTF-8" />
+<TITLE>Webshop Startseite</TITLE>
+<script language="Java Script" type="text/javascript" src="articel_content.js"></script>
+
+<script language="Java Script" type="text/javascript">
+function bake2(prod_click)
+{
+
+}
+function t_cookie_readout()
+{
+  
+pos0=0;
+  i5=1;
+  keep_go=true;
+  if(document.cookie)
+  {
+    rest_cook=document.cookie;
+    
+
+    do
+    {
+    pos_del=rest_cook.indexOf(";");
+    if(pos_del==-1)
+    {
+      keep_go=false;
+      pos_del=rest_cook.length;
+    }
+
+    //Die relevante Scheibe = sub_cook Das aktuelle Cookie Name und Wert
+    
+    (rest_cook.substring(0,1)==" ")?pos1=1:pos1=0;
+    
+    sub_cook=rest_cook.substring(pos1,pos_del);
+    //alert("Aktuelles Cookie:"+sub_cook);
+    //Ermittlung von Name und Wert des Cookies
+    pos_cur_eq=sub_cook.indexOf("=");
+    
+    cur_cook_name=sub_cook.substring(0,pos_cur_eq);
+
+    cur_cook_value=sub_cook.substring(pos_cur_eq+1,pos_del);
+    
+    if(cur_cook_name=="kat")
+    {
+      // Wenn Aktuelles Cookie = kat, dann alle Produkte auslesen:  
+      
+      sel_kat=eval(cur_cook_value);
+        
+        
+        //sel_kat=eval(kat4);
+      html_string="<table cellpadding='3'><tr><td valign='top' colspan='2'><h2>Kategorie "+sel_kat.kategory_fullname+"</h2></td></tr>";
+      for(i5=0;i5<sel_kat.fzglist.length;i5++)
+      {
+      cur_car=eval(sel_kat.fzglist[i5]);
+
+
+      /* Hier nur Formatierung des Kaufpreises mit Substring und Umwandlung in String*/
+      act_price_roh=cur_car.p_preis;
+      tsd1=Math.round(act_price_roh/1000);
+      tsd1=tsd1.toString();
+      pos1=tsd1.length;
+      act_price_roh=act_price_roh.toString();
+      act_price_string=act_price_roh.substring(0,pos1)+"."+act_price_roh.substr(pos1,3);
+
+
+      html_string+="<tr><td valign='top'><h3>"+cur_car.p_name+" - "+cur_car.p_desc_short+"</h3>"+cur_car.p_desc_long+"<p><b>Kaufpreis: "+act_price_string+"</b></p><p>Lieferzeit: "+cur_car.p_delivery+"</p><p><b><a href='javascript:add_item2(\""+cur_car.p_fullname+"\",\"+\")'>In den Einkaufswagen</a></td><td valign='top'><img src='"+cur_car.image_path1+"' border='1'></td></tr>";
+
+
+      }
+      html_string+="</table>";
+
+      document.getElementById("content").innerHTML=html_string;
+
+
+//####
+
+    //Angabe der Inhalte nach der gewählten Kategorie kat
+      
+    }
+
+
+
+    //Die Scheibe sub_cook von rest_cook abschneiden
+    rest_cook=rest_cook.substring(sub_cook.length+1+pos1,rest_cook.length);
+    //alert("Restliche Cookies:"+rest_cook);
+    
+    }
+  while(keep_go==true)
+  
+  }
+  else
+  {
+    alert("Kategorie konnte nicht geladen werden. Bitte vergewissern Sie Sich, dass Cookies erlaubt sind und wählen Sie die gewünschte Kategorie erneut.");
+  }
+
+
+
+}
+  /*
+    pos_cur_eq=sub_cook.indexOf("=");
+    pos_del=sub_cook.indexOf(";");
+    if(pos_del==-1)
+    {pos_del=sub_cook.length;}
+
+    cur_cook_name=sub_cook.substring(0,pos_cur_eq);
+    cur_cook_value=sub_cook.substring(pos_cur_eq+1,pos_del);
+    if(cur_cook_name=="kat")
+    {rel_kat=cur_cook_value;
+    alert("Gewählte Kategorie:"+rel_kat);}
+    //alert("Akt. Cookiename: "+cur_cook_name+"\nAkt. Cookiewert:"+cur_cook_value);
+    i5++;
+    pos0=pos_del+2;
+    pos_del=sub_cook.indexOf(";");
+    if(pos_del==-1)
+    {pos_del=sub_cook.length;}
+    sub_cook=sub_cook.substring(pos0,pos_del);
+    //alert("Neuer Restcookie:"+sub_cook);
+  }
+    
+
+
+/* Variante ohne Schleife-> Erstes Cookie-> Funktioniert!
+    sub_cook=document.cookie;
+    pos_del=sub_cook.indexOf(";");
+    pos_cur_eq=sub_cook.indexOf("=");
+    pos0=0;
+    cur_cook_name=sub_cook.substring(pos0,pos_cur_eq);
+    cur_cook_value=sub_cook.substring(pos_cur_eq+1,pos_del);
+    if(cur_cook_name=="kat")
+    {rel_kat=cur_cook_value;
+    alert("Gewählte Kategorie:"+rel_kat);}
+    alert("Erster Cookiename: "+cur_cook_name+"\nErster Cookiewert:"+cur_cook_value);
+    i5++;
+    pos0=pos_del+1;
+*/
+/*
+    while(sub_cook.indexOf("=")!=-1)
+    {
+
+      pos1=sub_cook.indexOf("=");
+  
+//sub_cook.indexOf(";")!=-1)?pos_del=document.cookie.indexOf(";")+1:pos_del=document.cookie.length);
+      cur_cookie_name=document.cookie.substring(pos0,pos1);
+      alert(cur_cookie_name);
+      pos0=pos1+1;
+
+      sub_cook=document.cookie.substring(pos0,document.cookie.length);
+
+    }
+
+  }
+  else
+  {
+    alert("Kategorie konnte nicht geladen werden. Bitte vergewissern Sie Sich, dass Cookies erlaubt sind und wählen Sie die gewünschte Kategorie erneut.");
+  }
+}*/
+</script>
+<style type="text/css">
+h2{color:blueviolet;padding-bottom:15px}
+</style>
+</HEAD>
+<BODY onLoad="t_cookie_readout()">
+ <div align="center"><h3>Bitte wählen Sie Ihr Produkt:</h3> 
+<h5><a href="sele_kat.html">Zurück zu den Kategorien</a><br>
+  <a href="warenkorb_versenden.html">Zum Warenkorb</a>
+ </h5><p>
+<button type="button" onclick="t_cookie_readout()"><b>Auslesen cookie</b></button>
+<button type="button" onclick="add_item2()"><b>Test Add Item</b></button>
+
+
+ </p></div>
+ <div id="content">
+
+
+
+ </div>
+</BODY>
+</HTML>
