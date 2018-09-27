@@ -22,7 +22,7 @@ i4=0;
 ordered_car_types=new Array();
 pos_del4=1;
 restcook4=document.cookie;
-
+cur_total2=0;
 while(pos_del4!=0)
 {
 pos_del4=restcook4.indexOf("; ");
@@ -56,6 +56,7 @@ for(u4=0;u4<=(ordered_car_types.length-1);u4++)
 cur_car44=eval(ordered_car_types[u4]);
 //alert(cur_car44);
 cur_total=cur_car44.p_preis*cur_car44.anzahl;
+cur_total2+=cur_total;
 /*
 this.p_name=p_name;
 this.p_id=p_id;
@@ -70,7 +71,7 @@ this.anzahl=0;
 
 html_war+="<tr><td>"+cur_car44.p_name+"</td><td>"+cur_car44.anzahl+"</td><td><b>"+cur_car44.p_preis_string+"</b></td><td><b>"+cur_total+"</b></td><td><b><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"+\");location.reload()'>(+)</a><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"-\");location.reload()'>(-)</a></b></td><td class=\"noactivefeature\"><b>Aus Warenkorb löschen</b></td></tr>";
 }
-
+html_war+="<tr><td></td><td></td><td><b>Gesamtbetrag:</b></td><td><b><u> "+cur_total2+"</u></b></td><td></td><td></td></tr>";
 html_war+="</table>";
 
 document.getElementById("content2").innerHTML=html_war;
