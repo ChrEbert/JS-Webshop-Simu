@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<META charset="UTF-8" />
+<TITLE>Warenkorb</TITLE>
+<script language="Java Script" type="text/javascript" src="articel_content.js"></script>
+<script language="Java Script" type="text/javascript">
+
+function order(product,ammount)
+{
+this.product=product;
+this.ammount=ammount;
+return this;
+}
+
+function warenkorb_load()
+{
+//Der Autotyp muss aus dem Cookie ermittelt werden
+// Alle Cookies rauslesen
+
+//Änderungen (Menge/löschen): 1. Änderung vollziehen 2. Cookie speichern 3. Tabelle neu aufbauen
+i4=0;
+ordered_car_types=new Array();
+pos_del4=1;
+restcook4=document.cookie;
+cur_total2=0;
+while(pos_del4!=0)
+{
+pos_del4=restcook4.indexOf("; ");
+    if(pos_del4==-1)
+    {pos_del4=restcook4.length;}
+cur_cook4=restcook4.substring(0,pos_del4);
+pos_eq4=cur_cook4.indexOf("=");
+cur_cook_name4=cur_cook4.substring(0,pos_eq4);
+cur_cook_value4=cur_cook4.substring(pos_eq4+1,cur_cook4.length);
+//alert("Abgeschnitten:"+cur_cook_name4.substr(cur_cook_name4.length-6,6));
+
+    if(cur_cook_name4.substr(cur_cook_name4.length-6,6)=="anzahl")
+    {
+    pos_sub4=cur_cook_name4.indexOf("_");  
+    cur_car_name4=cur_cook_name4.substring(0,pos_sub4);
+    eval(cur_car_name4).anzahl=cur_cook_value4;
+    ordered_car_types[i4]=cur_car_name4;
+    //alert("Gespeichertes Auto:"+ordered_car_types[i4]);
+    i4++;
+
+    }
+  restcook4=restcook4.substring(pos_del4+2,restcook4.length);
+  //alert("Suchergebnis:"+pos_del4);
+  }
+
+// Ab hier aktuelle Bestellungen auslesen und in HTML schreiben
+
+html_war="<h2>Ihr Warenkorb</h2><table border='1'><tr><td><b>Produkt</b></td><td><b>Aktuelle Menge</b></td><td><b>Preis</b></td><td><b>Gesamtbetrag</b></td><td><b>Menge ändern</b></td><td><b>Aus Warenkorb löschen</b></td></tr>";
+for(u4=0;u4<=(ordered_car_types.length-1);u4++)
+{
+cur_car44=eval(ordered_car_types[u4]);
+//alert(cur_car44);
+cur_total=cur_car44.p_preis*cur_car44.anzahl;
+cur_total2+=cur_total;
+/*
+this.p_name=p_name;
+this.p_id=p_id;
+this.p_desc_short=p_desc_short;
+this.p_desc_long=p_desc_long;
+this.p_preis=p_preis;
+cur_car.p_preis_string
+this.p_delivery=p_delivery;
+this.image_path1=image_path1;
+this.anzahl=0;
+*/
+
+html_war+="<tr><td>"+cur_car44.p_name+"</td><td>"+cur_car44.anzahl+"</td><td><b>"+o_render_number(cur_car44.p_preis)+"</b></td><td><b>"+o_render_number(cur_total)+"</b></td><td><b><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"+\");location.reload()'>(+)</a><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"-\");location.reload()'>(-)</a></b></td><td class=\"noactivefeature\"><b>Aus Warenkorb löschen</b></td></tr>";
+}
+html_war+="<tr><td></td><td></td><td><b>Gesamtbetrag:</b></td><td><b><u> "+o_render_number(cur_total2)+"</u></b></td><td></td><td></td></tr>";
+html_war+="</table>";
+
+document.getElementById("content2").innerHTML=html_war;
+
+
+}
+function warenkorb_delete(what5)
+{
+restcook5=document.cookie;
+posdel5=-1;
+alert("what:"+what5);
+
+    while(posdel5!=-1)
+    {
+    posdel5=restcook5.indexOf("; ");
+    curcook5=restcook5.substring(0,posdel5);
+    poseq5=curcook5.indexOf("=");
+    curcookname5=curcook5.substring(0,poseq5);
+    rightcheck5=curcookname5.substr(curcookname5.length-6,6);
+    if(rightcheck5=="anzahl" && what5=="all")
+    {document.cookie=curcookname5+"=;expires=Sat, 09 Jun 2018 00:00:00 GMT";}
+    restcook5=restcook5.substring(posdel5+2,restcook5.length);
+    
+    //alert(rightcheck5);
+    
+    }
+}
+
+</script>
+<style type="text/css">
+.noactivefeature{font-style:italic;color:grey}
+</style>
+
+</HEAD>
+<BODY onLoad="warenkorb_load()" onBeforeUnload="warenkorb_delete('all')">
+<div><button type="button" onclick="warenkorb_delete('all')" class="noactivefeature"><b>Alle löschen</b></button>
+   
+</div>
+
+    <div id="content2">
+<h2>Ihr Warenkorb</h2>
+<table>
+<tr><td><b>Produkt</b></td><td><b>Aktuelle Menge</b></td><td><b>Preis</b></td><td><b>Gesamtbetrag</b></td><td><b>Menge ändern</b></td><td><b>Aus Warenkorb löschen</b></td></tr>
+
+
+<!--Einmalig-->
+</table>
+</div>
+</BODY>
+</HTML>
