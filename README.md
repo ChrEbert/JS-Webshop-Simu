@@ -24,6 +24,20 @@ _No fixed order_
 
 - [ ] Create a category all, to display all available cartypes 
 - [ ] Integrate a drop down list for selecting categories
+- [ ] Script Merging: All scripts should be in articel_content.js
+- [ ] Implement a possibility to transfer formulardata via mailto
+- [ ] Standardization of the cookie-readout-function, which is used on several steps on the orderprocess
+- [x] Numberformating: price, amount and totalsums using Stringconversation and addings of points and comma
+- [ ] Deleteoption in shoppingcart
+- [ ] Deleteall option in shoppingcart
+- [ ] Solve the "Bug" that negative amounts can be submitted
+- [ ] Implement Textfield in shopping cart for changing ammounts directly
+- [x] Functionality i.t.o Cookies and Chrome, when webshopsimulation is online
+- [ ] Use only english language in sitecontent and naming of files to make a consistent appearance
+- [ ] Improving layouts by using CSS
+- [x] Adding a total sum in shopping_cart
+
+
 
 
 
