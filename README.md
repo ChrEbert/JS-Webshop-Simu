@@ -22,7 +22,7 @@ Here you see the structure and the steps to use the webshop
 
 _No fixed order_
 
--[] Create a category all, to display all available cartypes
+-[]Create a category all, to display all available cartypes
 
 
 
