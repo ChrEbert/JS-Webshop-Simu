@@ -22,7 +22,8 @@ Here you see the structure and the steps to use the webshop
 
 _No fixed order_
 
--[ ]Create a category all, to display all available cartypes -[ ]Integrate a drop down list for selecting categories
+-[ ] Create a category all, to display all available cartypes 
+-[ ] Integrate a drop down list for selecting categories
 
 
 
