@@ -252,7 +252,13 @@ case "+":
 cur_obj.anzahl++;
 break;
 case "-":
+alert("Reduktion");
+if(cur_obj.anzahl>0)
+{
 cur_obj.anzahl--;
+}
+else
+{alert("Bestellte Menge bereits 0!");}
 break;
 default:
 cur_obj.anzahl=parseInt(a_change);
@@ -261,7 +267,7 @@ break;
 
 //alert("Neue Menge:"+cur_obj.anzahl);
 document.cookie=sel_car+"_anzahl="+cur_obj.anzahl+";expires=Wed,10 Jun 2020 00:00:00 GMT";  
-alert(sel_car+" in Einkaufswagen hinzugefügt");
+alert("Menge für "+sel_car+" angepasst.");
 }
 
 function anz_artikel()
