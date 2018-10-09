@@ -30,7 +30,7 @@ _No fixed order_
 - [x] Numberformating: price, amount and totalsums using Stringconversation and addings of points and comma
 - [ ] Deleteoption in shoppingcart
 - [ ] Deleteall option in shoppingcart
-- [ ] Solve the "Bug" that negative amounts can be submitted
+- [x] Solve the "Bug" that negative amounts can be submitted
 - [ ] Implement Textfield in shopping cart for changing ammounts directly
 - [x] Functionality i.t.o Cookies and Chrome, when webshopsimulation is online
 - [ ] Use only english language in sitecontent and naming of files to make a consistent appearance
