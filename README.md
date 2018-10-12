@@ -28,8 +28,9 @@ _No fixed order_
 - [ ] Implement a possibility to transfer formulardata via mailto
 - [ ] Standardization of the cookie-readout-function, which is used on several steps on the orderprocess
 - [x] Numberformating: price, amount and totalsums using Stringconversation and addings of points and comma
-- [ ] Deleteoption in shoppingcart
-- [ ] Deleteall option in shoppingcart
+- [x] Deleteoption in shoppingcart
+- [x] Deleteall option in shoppingcart
+- [x] Delete item if current amount is zero
 - [x] Solve the "Bug" that negative amounts can be submitted
 - [ ] Implement Textfield in shopping cart for changing ammounts directly
 - [x] Functionality i.t.o Cookies and Chrome, when webshopsimulation is online
