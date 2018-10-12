@@ -1,4 +1,54 @@
 /* Libaryable Functions -> Also generell Cookie-extract function is planned here*/
+function o_delete_cookie(cookiename)
+{
+//o_delete_cookie('all_items')
+
+
+// Setting cookiename="all_items"-> Alle Cookies mit _anzahl (=Warenkorb relevant) werden gelöscht
+  //Zunächst alle Cookies rauslesen und prüfen ob Cookie (cookiename) vorhanden ist
+
+  cook_exists=false;
+cookie_all=document.cookie;
+cookie_rest=cookie_all;
+pos1=0;
+go1=true;
+pos_next=1;
+cookie_cur=cookie_all
+//alert("Alle Cookies: "+cookie_all);
+while(pos_next!==-1)
+{
+pos_next=cookie_rest.indexOf("; ");
+if(pos_next==-1 && go1==true)
+{pos_next=cookie_all.length;
+go1=false;}
+
+cookie_cur=cookie_rest.substring(0,pos_next);
+pos_name=cookie_cur.indexOf("=");
+cookie_cur_name=cookie_cur.substring(0,pos_name);
+if(cookiename=="all_items")
+{document.cookie=cookie_cur_name+"=; expires=Thu, 8 Oct 2018 08:00:00 GMT";
+}
+//if(cookiename)
+//If cookiename=all_items => Delete this cookie
+if(cookie_cur_name==cookiename)
+{
+cook_exists=true;  
+document.cookie=cookie_cur_name+"=; expires=Thu, 8 Oct 2018 08:00:00 GMT";
+//expires=Wed,10 Jun 2020 00:00:00 GMT"
+//alert("Der Cookie wurde gelöscht!");
+
+break;
+}
+pos1=pos_next+2;
+cookie_rest=cookie_rest.substring(pos1,cookie_all.length);
+//pos_next=cookie_cur.indexOf("; ");
+
+
+}
+
+}
+
+
 
 function o_render_number(numo)
 {
@@ -64,7 +114,6 @@ num_str=num_str.substring(0,pos_point)+"."+num_str.substring(pos_point,num_str.l
 //alert(num_str);
 return num_str;
 }
-
 
 
 
@@ -252,7 +301,6 @@ case "+":
 cur_obj.anzahl++;
 break;
 case "-":
-alert("Reduktion");
 if(cur_obj.anzahl>0)
 {
 cur_obj.anzahl--;
@@ -268,7 +316,15 @@ break;
 //alert("Neue Menge:"+cur_obj.anzahl);
 document.cookie=sel_car+"_anzahl="+cur_obj.anzahl+";expires=Wed,10 Jun 2020 00:00:00 GMT";  
 alert("Menge für "+sel_car+" angepasst.");
+if(cur_obj.anzahl==0)
+{
+  document.cookie=sel_car+"_anzahl="+cur_obj.anzahl+";expires=Wed,10 Oct 2018 00:00:00 GMT";  
+
+
 }
+}
+
+
 
 function anz_artikel()
 {
