@@ -22,8 +22,8 @@ Here you see the structure and the steps to use the webshop
 
 _No fixed order_
 
-- [ ] Create a category all, to display all available cartypes 
-- [ ] Integrate a drop down list for selecting categories
+- [x] Create a category all, to display all available cartypes 
+- [x] Integrate a drop down list for selecting categories
 - [ ] Script Merging: All scripts should be in articel_content.js
 - [ ] Implement a possibility to transfer formulardata via mailto
 - [ ] Standardization of the cookie-readout-function, which is used on several steps on the orderprocess
