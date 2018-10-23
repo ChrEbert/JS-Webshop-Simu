@@ -37,6 +37,7 @@ _No fixed order_
 - [ ] Use only english language in sitecontent and naming of files to make a consistent appearance
 - [ ] Improving layouts by using CSS
 - [x] Adding a total sum in shopping_cart
+- [ ] Zoom In Car-picture by simultaneous mouseover the picture
 
 
 
