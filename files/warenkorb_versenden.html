@@ -69,9 +69,10 @@ this.image_path1=image_path1;
 this.anzahl=0;
 */
 
-html_war+="<tr><td>"+cur_car44.p_name+"</td><td>"+cur_car44.anzahl+"</td><td><b>"+cur_car44.p_preis_string+"</b></td><td><b>"+cur_total+"</b></td><td><b><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"+\");location.reload()'>(+)</a><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"-\");location.reload()'>(-)</a></b></td><td class=\"noactivefeature\"><b>Aus Warenkorb löschen</b></td></tr>";
+html_war+="<tr><td>"+cur_car44.p_name+"</td><td>"+cur_car44.anzahl+"</td><td><b>"+o_render_number(cur_car44.p_preis)+"</b></td><td><b>"+o_render_number(cur_total)+"</b></td><td><b><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"+\");location.reload()'>(+)</a><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"-\");location.reload()'>(-)</a></b></td><td><b><a href='javascript:o_delete_cookie(\""+cur_car44.p_fullname+"_anzahl\");location.reload()'>Aus Warenkorb löschen</b></td></tr>";
 }
-html_war+="<tr><td></td><td></td><td><b>Gesamtbetrag:</b></td><td><b><u> "+cur_total2+"</u></b></td><td></td><td></td></tr>";
+
+html_war+="<tr><td></td><td></td><td><b>Gesamtbetrag:</b></td><td><b><u> "+o_render_number(cur_total2)+"</u></b></td><td></td><td></td></tr>";
 html_war+="</table>";
 
 document.getElementById("content2").innerHTML=html_war;
@@ -106,8 +107,8 @@ alert("what:"+what5);
 </style>
 
 </HEAD>
-<BODY onLoad="warenkorb_load()" onBeforeUnload="warenkorb_delete('all')">
-<div><button type="button" onclick="warenkorb_delete('all')" class="noactivefeature"><b>Alle löschen</b></button>
+<BODY onLoad="warenkorb_load()">
+<div><button type="button" onclick="o_delete_cookie('all_items');location.reload()"><b>Alle löschen</b></button>
    
 </div>
 
