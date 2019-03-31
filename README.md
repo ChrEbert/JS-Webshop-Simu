@@ -1,14 +1,4 @@
-<style>
-.klein{width:12px}
 
-/*table:nth-of-type(1) {
-    display:table;
-    width:100%;
-}
-table:nth-of-type(1) th:nth-of-type(2) {
-    width:10%;
-}*/
-</style>
 
 # JS-Webshop-Simu
 
