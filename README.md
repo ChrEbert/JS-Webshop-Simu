@@ -14,7 +14,7 @@ Here you see the structure and the steps to use the webshop
 
 <table>
   <tr>
-    <td align='center' width='8'><b>Step</b></td><td align='center' width='15'><b>Site</b></td><td align='center' width='*'><b>Purpose</b></td><td align='center' width='*'><b>Short Code Description</b></td>
+    <td align='center' width='5%'><b>Step</b></td><td align='center' width='10%'><b>Site</b></td><td align='center' width='35%'><b>Purpose</b></td><td align='center' width='50%'><b>Short Code Description</b></td>
   </tr>
   <tr>
     <td align='center' valign='top'>
