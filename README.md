@@ -38,7 +38,7 @@ Here you see the structure and the steps to use the webshop
     <a href='http://www.littleorange.de/garage/JS-Webshop-Simulation/sele_prod.html' target='_blank'>sele_prod.html</a>
     </td>
     <td align='justify' valign='top'>
-      Select a product of the choosen product kategory by clicking on "In den Einkaufswagen". You can also increase the ammount of the   former or another product after that. For finishing the ordering / switch to shopping cart view click on "Zum Warenkorb" in the beginning section of the site. You can also switch the category and return to sele_kat.html to choose further cars.
+      Select a product of the choosen product kategory by clicking on "In den Einkaufswagen". You can also increase the ammount of the   former or another product after that. For finishing the ordering / switch to shopping cart view click on \"Zum Warenkorb\" in the beginning section of the site. You can also switch the category and return to sele_kat.html to choose further cars.
 
     </td>
     <td align='justify' valign='top'>
