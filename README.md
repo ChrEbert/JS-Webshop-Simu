@@ -1,3 +1,15 @@
+<style>
+.klein{width:12px}
+
+/*table:nth-of-type(1) {
+    display:table;
+    width:100%;
+}
+table:nth-of-type(1) th:nth-of-type(2) {
+    width:10%;
+}*/
+</style>
+
 # JS-Webshop-Simu
 
 
@@ -14,7 +26,7 @@ Here you see the structure and the steps to use the webshop
 
 <table>
   <tr>
-    <td align='center' style='width:8px'><b>Step</b></td><td align='center' style='width:15px'><b>Site</b></td><td align='center'><b>Purpose</b></td><td align='center' width='50%'><b>Short Code Description</b></td>
+    <td align='center'><b>Step</b></td><td align='center' class='klein'><b>Site</b></td><td align='center'><b>Purpose</b></td><td align='center' width='50%'><b>Short Code Description</b></td>
   </tr>
   <tr>
     <td align='center' valign='top'>
