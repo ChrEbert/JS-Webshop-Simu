@@ -71,6 +71,7 @@ this.anzahl=0;
 
 html_war+="<tr><td>"+cur_car44.p_name+"</td><td>"+cur_car44.anzahl+"</td><td><b>"+o_render_number(cur_car44.p_preis)+"</b></td><td><b>"+o_render_number(cur_total)+"</b></td><td><b><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"+\");location.reload()'>(+)</a><a href='javascript:add_item2(\""+cur_car44.p_fullname+"\",\"-\");location.reload()'>(-)</a></b></td><td><b><a href='javascript:o_delete_cookie(\""+cur_car44.p_fullname+"_anzahl\");location.reload()'>Aus Warenkorb löschen</b></td></tr>";
 }
+
 html_war+="<tr><td></td><td></td><td><b>Gesamtbetrag:</b></td><td><b><u> "+o_render_number(cur_total2)+"</u></b></td><td></td><td></td></tr>";
 html_war+="</table>";
 
